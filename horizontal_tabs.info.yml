@@ -1,0 +1,6 @@
+name: 'Horizontal tabs'
+type: module
+description: 'Defines a horizontal_tabs render element.'
+core: 8.x
+dependencies:
+  - system (>=8.3.0)

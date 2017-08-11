@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function horizontal_tabs_theme($existing, $type, $theme, $path) {
+  return [
+    'horizontal_tabs' => [
+      'render element' => 'element',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for horizontal tabs templates.
+ *
+ * Default template: horizontal-tabs.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties and children of
+ *     the details element. Properties used: #children.
+ */
+function template_preprocess_horizontal_tabs(&$variables) {
+  $element = $variables['element'];
+  $variables['children'] = (!empty($element['#children'])) ? $element['#children'] : '';
+}
