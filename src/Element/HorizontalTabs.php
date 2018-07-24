@@ -4,6 +4,7 @@ namespace Drupal\horizontal_tabs\Element;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Element\RenderElement;
 
 /**
  * Provides a render element for horizontal tabs in a form.
@@ -47,7 +48,7 @@ use Drupal\Core\Render\Element;
  *
  * @FormElement("horizontal_tabs")
  */
-class HorizontalTabs extends Element\RenderElement {
+class HorizontalTabs extends RenderElement {
 
   /**
    * {@inheritdoc}
@@ -76,7 +77,7 @@ class HorizontalTabs extends Element\RenderElement {
    * @return array
    *   The modified element.
    */
-  public static function preRenderHorizontalTabs($element) {
+  public static function preRenderHorizontalTabs(array $element) {
     // Do not render the horizontal tabs element if it is empty.
     $group = implode('][', $element['#parents']);
     if (!Element::getVisibleChildren($element['group']['#groups'][$group])) {
@@ -99,7 +100,7 @@ class HorizontalTabs extends Element\RenderElement {
    * @return array
    *   The processed element.
    */
-  public static function processHorizontalTabs(&$element, FormStateInterface $form_state, &$complete_form) {
+  public static function processHorizontalTabs(array &$element, FormStateInterface $form_state, array &$complete_form) {
     if (isset($element['#access']) && !$element['#access']) {
       return $element;
     }
