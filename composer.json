@@ -1,8 +1,8 @@
 {
-    "name": "agoradesign/horizontal_tabs",
+    "name": "drupal/horizontal_tabs",
     "type": "drupal-module",
     "description": "Defines a horizontal_tabs render element for Drupal 8.",
-    "homepage": "https://github.com/agoradesign/horizontal_tabs",
+    "homepage": "https://www.drupal.org/project/horizontal_tabs",
     "license": "GPL-2.0+",
     "require": {
         "drupal/core": "~8.3"
